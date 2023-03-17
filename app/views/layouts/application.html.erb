@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<%# 下記でdaisyUI テーマを決定している　%>
+<html data-theme="cupcake">
   <head>
     <title>MofuRight</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -15,6 +16,7 @@
   </head>
 
   <body>
+    <%#= render 'shared/header' %>
     <%= yield %>
   </body>
 </html>
