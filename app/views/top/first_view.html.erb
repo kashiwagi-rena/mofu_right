@@ -79,9 +79,9 @@
   </div>
   <!-- ボタン -->
   <div class="flex justify-center">
-    <button  class="btn btn-outline btn-secondary mt-10">🐾ユーザー登録🐾</button>
+    <%= button_to '🐾ユーザー登録🐾', root_path, class: "btn btn-outline btn-secondary mt-10" %>
   </div>
   <div class="flex justify-center mt-5">
-    <button class="btn btn-outline btn-warning">🐾もふもふの世界へ🐾</button>
+    <%= button_to '🐾もふもふの世界へ🐾', posts_path, class: "btn btn-outline btn-warning",  method: :get %>
   </div>
 </div>
