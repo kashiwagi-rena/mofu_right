@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "top#first_view"
 
-  resources :posts, only: %i[index]
+  resources :posts, only: %i[index new create]
 end
