@@ -12,9 +12,9 @@ class PostsController < ApplicationController
     #@post = current_user.posts.build(post_params)
     @post = Post.new(post_params)
     if @post.save
-      redirect_to posts_path, success: t('もふの投稿が成功しました！')
+      redirect_to posts_path flash[:alert] = 'もふの投稿が成功しました！'
     else
-      flash.now['danger'] = t('投稿が失敗しました。人間が写ってませんか？')
+      flash[:alert] = '投稿が失敗しました。人間が写ってませんか？'
       render :new
     end
   end
