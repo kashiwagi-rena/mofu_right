@@ -17,7 +17,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_18_072821) do
   create_table "posts", force: :cascade do |t|
     t.string "name", null: false
     t.string "body", null: false
-    t.binary "photo", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
