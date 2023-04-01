@@ -1,25 +1,26 @@
 <div class="col-sm-12 col-lg-4 mb-3">
   <div id="post-id-<%= post.id %>">
     <div class="card">
-      <%= image_tag 'logo_nikukyu.jpg', class: 'card-img-top', size: '300x200' %>
+      <%= image_tag post.post_image_url, class: 'card-img-top', size: '300x200' %>
+      <h4 class="card-name">
+        <a href="#">
+          <%= post.name %>
+        </a>
+      </h4>
+      <%#= image_tag 'logo_nikukyu.jpg', class: 'card-img-top', size: '300x200' %>
       <div class="card-body">
-        <h4 class="card-title">
-          <a href="#">
-            <%= post.title %>
-          </a>
-        </h4>
         <div class='mr10 float-right'>
-          <a href="#"><%= icon 'fas', 'trash', class: 'pr-1' %></a>
-          <a href="#"><%= icon 'fa', 'pen' %></a>
+          <a href="#"><i class="fa-regular fa-trash-can fa-2xl"></i></i></i></a>
+          <a href="#"><i class="fa-regular fa-pen-to-square fa-2xl"></i></a>
         </div>
         <ul class="list-inline">
           <li class="list-inline-item">
-            <%= icon 'far', 'user' %>
-            <%= post.user.decorate.name %>
+            <i class="fa-solid fa-cat fa-2xl"></i>
+            <%#= post.user.decorate.name %>
           </li>
           <li class="list-inline-item">
-            <%= icon 'far', 'calendar' %>
-            <%= l board.created_at, format: :long %>
+            <%#= icon 'far', 'calendar' %>
+            <%#= l board.created_at, format: :long %>
           </li>
         </ul>
         <p class="card-text"><%= post.body %></p>

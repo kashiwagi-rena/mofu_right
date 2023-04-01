@@ -6,9 +6,11 @@
       <%# if posts_path? %>
         <%= link_to '一覧画面', posts_path , class: "mr-5 hover:text-yellow-700"%>
       <%# else %>
-        <%= link_to '投稿画面', '#' , class: "mr-5 hover:text-yellow-700"%>
+        <%= link_to '投稿画面', new_post_path , class: "mr-5 hover:text-yellow-700"%>
       <%# end %>
-      <%= link_to 'ログアウト',"" , method: :delete ,class: "hover:text-yellow-700" %>
+      <%= link_to "" , method: :delete ,class: "hover:text-yellow-700" do %>
+        <i class="fa-brands fa-google">ログアウト</i>    
+      <% end %>
     </div>
   </div>
 </header>
