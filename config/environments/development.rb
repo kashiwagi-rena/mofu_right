@@ -36,6 +36,8 @@ Rails.application.configure do
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
 
+  #gem 'devise'を入れた際の追加
+  config.action_mailer.default_url_options = { protocol: 'https', host: 'https://mafu-right.fly.dev/' }
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 

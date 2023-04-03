@@ -72,3 +72,6 @@ gem 'jsbundling-rails'
 
 #画像アップロード用gem
 gem 'carrierwave', '>= 3.0.0.beta', '< 4.0'
+
+#ログイン認証
+gem 'devise'
