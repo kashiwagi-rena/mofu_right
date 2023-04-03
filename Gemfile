@@ -75,3 +75,6 @@ gem 'carrierwave', '>= 3.0.0.beta', '< 4.0'
 
 #ログイン認証
 gem 'devise'
+
+#環境変数の設定（openするべきではないものを入れるところ https://pikawaka.com/rails/dotenv-rails）
+gem 'dotenv-rails'
