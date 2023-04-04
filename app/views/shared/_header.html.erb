@@ -3,13 +3,19 @@
     <%= link_to image_tag('logo_type.jpg', size: '150x150'), root_path%>
     <div class="md:ml-auto flex flex-wrap items-center text-base justify-center text-pink-500">
       <%= link_to "マイページ", "" ,class: "mr-5 hover:text-yellow-700" %>
-      <%# if posts_path? %>
+      <%# if current_page=post? %>
         <%= link_to '一覧画面', posts_path , class: "mr-5 hover:text-yellow-700"%>
       <%# else %>
         <%= link_to '投稿画面', new_post_path , class: "mr-5 hover:text-yellow-700"%>
       <%# end %>
-      <%= link_to "" , method: :delete ,class: "hover:text-yellow-700" do %>
-        <i class="fa-brands fa-google">ログアウト</i>    
+      <% if user_signed_in? %>
+        <%= button_to destroy_user_session_path , method: :delete, alert: "本当にログアウトしますか？", class: "hover:text-yellow-700" do %>
+          <i class="fa-brands fa-google">ログアウト</i>    
+        <% end %>
+      <% else %>
+        <%= link_to new_user_session_path , class: "hover:text-yellow-700" do %>
+          <i class="fa-brands fa-google">ログイン</i>    
+        <% end %>
       <% end %>
     </div>
   </div>
