@@ -78,3 +78,6 @@ gem 'devise'
 
 #環境変数の設定（openするべきではないものを入れるところ https://pikawaka.com/rails/dotenv-rails）
 gem 'dotenv-rails'
+
+#google_loginようにgem　公式：https://github.com/zquestz/omniauth-google-oauth2 参考：https://qiita.com/akioneway94/items/35641ad30c2acb23b562　
+gem 'omniauth-google-oauth2'
