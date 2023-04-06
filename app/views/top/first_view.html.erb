@@ -14,22 +14,22 @@
         <div class="absolute right-10 mt-5">
           <%= image_tag 'nikukyu.jpg', size: "50x50" %>
         </div>
-          <p class="text-sm">「モフは正義」は、<br>
+          <p class="text-sm relative">「モフは正義」は、<br>
           動物写真特化型のSNSサービスです<br>
           可愛らしい動物写真の投稿が基本で、<br>
           人語も少ない仕様になっています<br>
       </p>
     </div>
-    <div class="contributor text-center">
+    <div class="contributor text-center relative">
       <p class="text-xl font-mono leading-loose mt-5">もふもふが好きな方へ</p>
         <!-- にくきゅう左　-->
         <div class="absolute left-20">
           <%= image_tag 'nikukyu.jpg', size: "50x50" %>
         </div>
-        <div class="absolute left-10  ">
+        <div class="absolute left-10">
           <%= image_tag 'nikukyu.jpg', size: "50x50" %>
         </div>
-          <p class="text-sm">まずは、一覧画面へ飛んでみてください！<br>
+          <p class="text-sm relative">まずは、一覧画面へ飛んでみてください！<br>
           動物写真しかないことに驚くことでしょう<br>
           このサービスは、動物写真しかあげることが出来ない仕様になっています<br>
           貴方の好きなもふもふにきっと出会えるはず・・・<br>
@@ -46,7 +46,7 @@
     </div>
 
     <div class="contributor text-center">
-      <p class="text-xl font-mono leading-loose mt-5">我が子が可愛くてみんなに知ってもらいたい方へ</p>
+      <p class="text-xl font-mono leading-loose mt-5 relative">我が子が可愛くてみんなに知ってもらいたい方へ</p>
         <p class="text-sm">まずは、ユーザー登録をお願い致します<br>
         貴方の可愛い子の可愛らしい姿は、みんな見たいのです！<br>
         一覧画面で運命的な出会いを果たしたら、貴方のページに飛んで可愛らしさを噛み締めたいのです<br>
@@ -61,27 +61,48 @@
       <div class="absolute left-10 mt-5">
         <%= image_tag 'nikukyu.jpg', size: "50x50" %>
       </div>
-      <p class="text-xl font-mono leading-loose mt-1">人間の皆さんへ</p>
-        <p class="text-sm">人語や人間を媒体にした写真を投稿しないようにご注意ください！<br>
+      <p class="text-xl font-mono leading-loose mt-1 relative">人間の皆さんへ</p>
+        <p class="text-sm relative">人語や人間を媒体にした写真を投稿しないようにご注意ください！<br>
         『可愛い写真にコメントを残そうとしても「にくきゅう文字」になってしまった！』・・・大丈夫です<br>
         写真媒体の可愛い子に直接コメントが読めるように訳されているだけですので、どんどん褒めていきましょう！</p>
-        <p class="text-sm">『いざ、写真を投稿しようと思ったら、ERRORが出てしまった！』・・・それは、気をつけてください<br>
+                <!-- にくきゅう右　-->
+        <div class="absolute right-20">
+          <%= image_tag 'nikukyu.jpg', size: "50x50" %>
+        </div>
+        <div class="absolute right-10 mt-5">
+          <%= image_tag 'nikukyu.jpg', size: "50x50" %>
+        </div>
+        <p class="text-sm relative">『いざ、写真を投稿しようと思ったら、ERRORが出てしまった！』・・・それは、気をつけてください<br>
         人間を媒体にした写真に関しては、このSNSの使用上、ERRORが出てしまいます<br>
         もしかすると・・・今後、とんでもないことになってしまうかもしれませんので、<br>
         注意喚起が出た際は、お手数ですが人間を消してからの投稿をよろしくお願い致します</p>
     </div>
   </div>
-  <div class="flex justify-center mt-6">
+  <div class="flex justify-center mt-6 relative">
     <%#= image_tag 'logo_nikukyu.jpg' %>
     <div class="bg-lime-300 hover:bg-lime-400 rounded-lg">
       <%= link_to image_tag("logo_nikukyu.jpg"), "/" %>
     </div>
   </div>
+    <!-- にくきゅう左　-->
+  <div class="absolute left-0">
+    <%= image_tag 'nikukyu.jpg', size: "50x50" %>
+  </div>
+  <div class="absolute left-10 mt-5">
+    <%= image_tag 'nikukyu.jpg', size: "50x50" %>
+  </div>
   <!-- ボタン -->
-  <div class="flex justify-center">
+  <div class="flex justify-center relative">
     <%= button_to '🐾ユーザー登録🐾', new_user_session_path, class: "btn btn-outline btn-secondary mt-10" %>
   </div>
-  <div class="flex justify-center mt-5">
+              <!-- にくきゅう右　-->
+  <div class="absolute right-20">
+    <%= image_tag 'nikukyu.jpg', size: "50x50" %>
+  </div>
+  <div class="absolute right-10 mt-5">
+    <%= image_tag 'nikukyu.jpg', size: "50x50" %>
+  </div>
+  <div class="flex justify-center mt-5 relative">
     <%= button_to '🐾もふもふの世界へ🐾', posts_path, class: "btn btn-outline btn-warning",  method: :get %>
   </div>
 </div>
