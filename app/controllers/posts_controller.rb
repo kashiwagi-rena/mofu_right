@@ -8,14 +8,20 @@ class PostsController < ApplicationController
   end
 
   def create
+    #binding.pry
     @post = current_user.posts.build(post_params)
-    #@post = Post.new(post_params)
+
     if @post.save
-      redirect_to posts_path flash[:alert] = 'もふの投稿が成功しました！'
+      flash[:alert] = 'もふの投稿が成功しました！'
+      redirect_to posts_path
     else
       flash[:alert] = '投稿が失敗しました。人間が写ってませんか？'
       render :new
     end
+  end
+
+  def show
+    @post = Post.find(params[:id])
   end
 
   private
