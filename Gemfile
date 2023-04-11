@@ -83,4 +83,5 @@ gem 'dotenv-rails'
 gem 'omniauth-google-oauth2'
 
 #aws
-gem 'aws-sdk-rails'
+gem 'aws-sdk-rekognition'
+gem 'aws-sdk-s3'
