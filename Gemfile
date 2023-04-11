@@ -81,3 +81,6 @@ gem 'dotenv-rails'
 
 #google_loginようにgem　公式：https://github.com/zquestz/omniauth-google-oauth2 参考：https://qiita.com/akioneway94/items/35641ad30c2acb23b562　
 gem 'omniauth-google-oauth2'
+
+#ページネーション 公式：https://github.com/kaminari/kaminari　ピカワカ：https://pikawaka.com/rails/kaminari
+gem 'kaminari'
