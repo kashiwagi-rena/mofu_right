@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_08_035034) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_12_131923) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "greats", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "post_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_greats_on_post_id"
+    t.index ["user_id", "post_id"], name: "index_greats_on_user_id_and_post_id", unique: true
+    t.index ["user_id"], name: "index_greats_on_user_id"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string "name", null: false
@@ -38,5 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_08_035034) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "greats", "posts"
+  add_foreign_key "greats", "users"
   add_foreign_key "posts", "users"
 end

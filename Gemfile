@@ -85,3 +85,5 @@ gem 'omniauth-google-oauth2'
 #aws
 gem 'aws-sdk-rekognition'
 gem 'aws-sdk-s3'
+#ページネーション 公式：https://github.com/kaminari/kaminari　ピカワカ：https://pikawaka.com/rails/kaminari
+gem 'kaminari'
