@@ -1,0 +1,5 @@
+<% if current_user.great?(post) %>
+  <%= render 'ungreat', { post: post } %>
+<% else %>
+  <%= render 'great', { post: post } %>
+<% end %>

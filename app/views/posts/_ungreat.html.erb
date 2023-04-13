@@ -1,0 +1,5 @@
+<%= button_to great_path(current_user.greats.find_by(post_id: post.id)), id: "js-great-button-for-post-#{post.id}", class: 'flex items-center justify-center text-center', method: :delete do %>
+  <%# ☆ %>
+  <i class="fa-solid fa-star"></i>
+<% end %>
+
