@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all.includes(:user).order(created_at: :desc).page(params[:page]).per(10)
+    @posts = Post.all.includes([:user, :greats]).order(created_at: :desc).page(params[:page]).per(10)
   end
 
   def new
@@ -23,6 +23,10 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
   end
+
+  def greats
+    @great_posts = current_user.great_posts.includes(:user).order(created_at: :desc)
+  end 
 
   private
 
