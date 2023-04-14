@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, only: [:new]
   #AWS Rekognition
   require 'aws-sdk-rekognition'
 
