@@ -18,9 +18,9 @@
       <div class="card-body flex justify-center text-green-600 relative">
         <ul class="list-inline">
           <li class="list-inline-item">
-            <% if current_user.own?(post) %>
+            <% if current_user && current_user.own?(post) %>
               <%= render 'crud_menus', post: post %>
-            <% else %>
+            <% elsif current_user %>
               <%= render 'great_button', post: post %>
             <% end %>
           </li>

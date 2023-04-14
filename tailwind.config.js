@@ -1,3 +1,4 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     './app/views/**/*.html.erb',
@@ -14,5 +15,12 @@ module.exports = {
   ],
   daisyui: {
     themes: ["pastel"],
+  },
+  theme: {
+    extend: {
+      fontFamily: {
+        yomogi: ['Yomogi', 'cursive'],
+      },
+    },
   },
 }
