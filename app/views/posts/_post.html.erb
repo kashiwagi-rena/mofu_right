@@ -1,22 +1,28 @@
-<div class="col-sm-12 col-lg-4 mb-3">
+      <!-- にくきゅう右　-->
+        <div class="absolute right-5">
+          <%= image_tag 'nikukyu.jpg', size: "50x50" %>
+        </div>
+        <div class="absolute right-0 mt-10">
+          <%= image_tag 'nikukyu.jpg', size: "50x50" %>
+        </div>
+<div class="col-sm-12 col-lg-4 mb-3 flex items-center justify-center text-center">
   <div id="post-id-<%= post.id %>">
     <div class="card">
       <%= image_tag post.post_image_url, class: 'card-img-top', size: '300x200' %>
-      <h4 class="card-name">
+      <%#= image_tag 'logo_nikukyu.jpg', class: 'card-img-top', size: '300x200' %>
+      <h3 class="card-name text-green-700 text-2xl relative">
         <a href="#">
           <%= post.name %>
         </a>
-      </h4>
-      <%#= image_tag 'logo_nikukyu.jpg', class: 'card-img-top', size: '300x200' %>
-      <div class="card-body">
-        <div class='mr10 float-right'>
-          <a href="#"><i class="fa-regular fa-trash-can fa-2xl"></i></i></i></a>
-          <a href="#"><i class="fa-regular fa-pen-to-square fa-2xl"></i></a>
-        </div>
+      </h3>
+      <div class="card-body flex justify-center text-green-600 relative">
         <ul class="list-inline">
           <li class="list-inline-item">
-            <i class="fa-solid fa-cat fa-2xl"></i>
-            <%#= post.user.decorate.name %>
+            <% if current_user && current_user.own?(post) %>
+              <%= render 'crud_menus', post: post %>
+            <% elsif current_user %>
+              <%= render 'great_button', post: post %>
+            <% end %>
           </li>
           <li class="list-inline-item">
             <%#= icon 'far', 'calendar' %>
@@ -26,5 +32,12 @@
         <p class="card-text"><%= post.body %></p>
       </div>
     </div>
+  </div>
+  <!-- にくきゅう左　-->
+  <div class="absolute left-5">
+    <%= image_tag 'nikukyu.jpg', size: "50x50" %>
+  </div>
+  <div class="absolute left-10 mt-20">
+    <%= image_tag 'nikukyu.jpg', size: "50x50" %>
   </div>
 </div>
