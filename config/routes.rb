@@ -14,4 +14,6 @@ Rails.application.routes.draw do
     end
   end
   resources :greats, only: %i[create destroy]
+
+  get '/privacy_policy', to: 'top#privacy_policy'  
 end
