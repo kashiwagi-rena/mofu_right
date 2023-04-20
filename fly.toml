@@ -1,10 +1,15 @@
-# fly.toml file generated for mafu-right on 2023-03-22T01:43:43+09:00
+# fly.toml app configuration file generated for mofu-right on 2023-04-20T09:47:38+09:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
 
-app = "mafu-right"
+app = "mofu-right"
 kill_signal = "SIGINT"
 kill_timeout = 5
 primary_region = "nrt"
 processes = []
+
+[build]
 
 [env]
 

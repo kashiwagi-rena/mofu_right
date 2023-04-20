@@ -87,3 +87,7 @@ gem 'aws-sdk-rekognition'
 gem 'aws-sdk-s3'
 #ページネーション 公式：https://github.com/kaminari/kaminari　ピカワカ：https://pikawaka.com/rails/kaminari
 gem 'kaminari'
+
+gem "dockerfile-rails", ">= 1.2", :group => :development
+
+gem "redis", "~> 5.0"
