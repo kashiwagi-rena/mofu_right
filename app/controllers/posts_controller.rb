@@ -13,12 +13,13 @@ class PostsController < ApplicationController
 
   def create
     s3 = Aws::S3::Resource.new(
-      region: 'us-east-1',
+      region: 'ap-northeast-1',
       access_key_id: ENV['AWS_ACCESS_KEY_ID'],
       secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
     )
     @post = current_user.posts.build(post_params)
-  
+    rekognition_client = Aws::Rekognition::Client.new(region: 'ap-northeast-1', access_key_id: ENV['AWS_ACCESS_KEY_ID'], secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'])
+
     if @post.save
       image = @post.post_image
       if image.present?
@@ -43,7 +44,7 @@ class PostsController < ApplicationController
           flash[:alert] = '投稿が失敗しました。人間が写っています。'
           render :new
         else
-          flash[:alert] = 'もふの投稿が成功しました！'
+          flash[:alert] = 'もふもふの投稿が成功しました！'
           redirect_to posts_path
         end
       else
@@ -72,7 +73,7 @@ class PostsController < ApplicationController
 
   def rekognition_tags(image, s3)
     # Rekognitionのクライアントを作成
-    rekognition_client = Aws::Rekognition::Client.new(region: 'us-east-1', access_key_id: ENV['AWS_ACCESS_KEY_ID'], secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'])
+    rekognition_client = Aws::Rekognition::Client.new(region: 'ap-northeast-1', access_key_id: ENV['AWS_ACCESS_KEY_ID'], secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'])
     
     # 画像をS3にアップロード
     obj = s3.bucket(ENV['AWS_S3_BUCKET_NAME']).object(image.filename)
