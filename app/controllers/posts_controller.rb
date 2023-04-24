@@ -44,9 +44,13 @@ class PostsController < ApplicationController
           @post.destroy
           flash[:alert] = '投稿が失敗しました。人間が写っています。'
           render :new
-        else
+        elsif response.labels.any? { |label| label.name.downcase.include?('animal') }
           flash[:alert] = 'もふもふの投稿が成功しました！'
           redirect_to posts_path
+        else
+          @post.destroy
+          flash[:alert] = '投稿が失敗しました。もふ以外が写っています。'
+          render :new
         end
       else
         flash[:alert] = '投稿が失敗しました。画像を選択してください。'
@@ -88,7 +92,7 @@ class PostsController < ApplicationController
           name: image.filename
         }
       },
-      max_labels: 10
+      max_labels: 5
     )
 
     # ラベル情報からタグ名の配列を作成して返す
