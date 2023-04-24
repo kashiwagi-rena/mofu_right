@@ -39,7 +39,8 @@ class PostsController < ApplicationController
         )
   
         # Rekognitionの結果に基づいて、投稿の可否を判断する
-        if response.labels.any? { |label| label.name.downcase.include?('human') }
+        #binding.pry
+        if response.labels.any? { |label| label.name.downcase.include?('person') }
           @post.destroy
           flash[:alert] = '投稿が失敗しました。人間が写っています。'
           render :new
