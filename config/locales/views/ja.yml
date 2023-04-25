@@ -18,6 +18,11 @@ ja:
       name: 'なまえ'
       body: 'ひと言'
       post_image: 'もふもふ'
+  shared:
+    header:
+      my_page: 'マイページ'
+      posting: 'とうこう'
+      look: 'いちらん'
     bookmarks:
       title: 'ブックマーク一覧'
   profiles:
