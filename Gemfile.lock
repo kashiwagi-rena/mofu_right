@@ -115,6 +115,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.11.0)
+      devise (>= 4.9.0)
     dotenv (2.8.1)
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
@@ -241,6 +243,9 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.5.0)
       loofah (~> 2.19, >= 2.19.1)
+    rails-i18n (7.0.6)
+      i18n (>= 0.7, < 2)
+      railties (>= 6.0.0, < 8)
     railties (7.0.4.2)
       actionpack (= 7.0.4.2)
       activesupport (= 7.0.4.2)
@@ -304,6 +309,7 @@ DEPENDENCIES
   cssbundling-rails
   debug
   devise
+  devise-i18n
   dotenv-rails
   jbuilder
   jsbundling-rails
@@ -313,6 +319,7 @@ DEPENDENCIES
   pry-byebug
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.2)
+  rails-i18n (~> 7.0.0)
   sprockets-rails
   stimulus-rails
   turbo-rails
