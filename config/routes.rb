@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root "top#first_view"
 
   resources :posts, only: %i[index new create] do
+    resources :comments, only: %i[create], shallow: true
     collection do
       get :greats
     end
