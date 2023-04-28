@@ -26,6 +26,7 @@ class PostsController < ApplicationController
         # アップロードされたファイルがある場合はS3にアップロードする
         file = image.file || image.cache_file
         obj = s3.bucket(ENV['AWS_S3_BUCKET_NAME']).object(image.filename)
+        binding.pry
         obj.upload_file(file.path, acl: 'public-read')
         
         # 画像に対してRekognitionを実行し、ラベル情報を取得する
