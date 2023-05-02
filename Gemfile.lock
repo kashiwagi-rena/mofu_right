@@ -116,18 +116,40 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+<<<<<<< HEAD
     dockerfile-rails (1.2.5)
       rails
+=======
+    devise-i18n (1.11.0)
+      devise (>= 4.9.0)
+>>>>>>> a47346a895d73ed78144c8b461fd7777807da5cc
     dotenv (2.8.1)
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
       railties (>= 3.2)
     erubi (1.12.0)
+    excon (0.99.0)
     faraday (2.7.4)
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
     faraday-net_http (3.0.2)
     ffi (1.15.5)
+    fog-aws (3.18.0)
+      fog-core (~> 2.1)
+      fog-json (~> 1.1)
+      fog-xml (~> 0.1)
+    fog-core (2.3.0)
+      builder
+      excon (~> 0.71)
+      formatador (>= 0.2, < 2.0)
+      mime-types
+    fog-json (1.2.0)
+      fog-core
+      multi_json (~> 1.10)
+    fog-xml (0.1.4)
+      fog-core
+      nokogiri (>= 1.5.11, < 2.0.0)
+    formatador (1.1.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
     hashie (5.0.0)
@@ -168,10 +190,14 @@ GEM
       net-smtp
     marcel (1.0.2)
     method_source (1.0.0)
+    mime-types (3.4.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2023.0218.1)
     mini_magick (4.12.0)
     mini_mime (1.1.2)
     minitest (5.17.0)
     msgpack (1.6.0)
+    multi_json (1.15.0)
     multi_xml (0.6.0)
     net-imap (0.3.4)
       date
@@ -244,6 +270,9 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.5.0)
       loofah (~> 2.19, >= 2.19.1)
+    rails-i18n (7.0.6)
+      i18n (>= 0.7, < 2)
+      railties (>= 6.0.0, < 8)
     railties (7.0.4.2)
       actionpack (= 7.0.4.2)
       activesupport (= 7.0.4.2)
@@ -312,7 +341,9 @@ DEPENDENCIES
   debug
   devise
   dockerfile-rails (>= 1.2)
+  devise-i18n
   dotenv-rails
+  fog-aws
   jbuilder
   jsbundling-rails
   kaminari
@@ -322,6 +353,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.2)
   redis (~> 5.0)
+  rails-i18n (~> 7.0.0)
   sprockets-rails
   stimulus-rails
   turbo-rails

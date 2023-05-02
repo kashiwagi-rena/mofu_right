@@ -12,22 +12,12 @@ class PostsController < ApplicationController
   end
 
   def create
-    s3 = Aws::S3::Resource.new(
-      region: 'ap-northeast-1',
-      access_key_id: ENV['AWS_ACCESS_KEY_ID'],
-      secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
-    )
     @post = current_user.posts.build(post_params)
     rekognition_client = Aws::Rekognition::Client.new(region: 'ap-northeast-1', access_key_id: ENV['AWS_ACCESS_KEY_ID'], secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'])
 
     if @post.save
       image = @post.post_image
       if image.present?
-        # アップロードされたファイルがある場合はS3にアップロードする
-        file = image.file || image.cache_file
-        obj = s3.bucket(ENV['AWS_S3_BUCKET_NAME']).object(image.filename)
-        obj.upload_file(file.path, acl: 'public-read')
-        
         # 画像に対してRekognitionを実行し、ラベル情報を取得する
         response = rekognition_client.detect_labels(
           image: {
@@ -41,8 +31,8 @@ class PostsController < ApplicationController
         # Rekognitionの結果に基づいて、投稿の可否を判断する
         #binding.pry
         if response.labels.any? { |label| label.name.downcase.include?('person') }
-          @post.destroy
           flash[:alert] = '投稿が失敗しました。人間が写っています。'
+          @post.destroy
           render :new
         elsif response.labels.any? { |label| label.name.downcase.include?('animal') }
           flash[:alert] = 'もふもふの投稿が成功しました！'
