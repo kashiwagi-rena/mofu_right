@@ -72,6 +72,8 @@ gem 'jsbundling-rails'
 
 #画像アップロード用gem
 gem 'carrierwave', '>= 3.0.0.beta', '< 4.0'
+#ファイルの保存先を外部のストレージする際にサポートしてくれるgem
+gem 'fog-aws'
 
 #ログイン認証
 gem 'devise'
