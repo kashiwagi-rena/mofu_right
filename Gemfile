@@ -72,9 +72,13 @@ gem 'jsbundling-rails'
 
 #画像アップロード用gem
 gem 'carrierwave', '>= 3.0.0.beta', '< 4.0'
+#ファイルの保存先を外部のストレージする際にサポートしてくれるgem
+gem 'fog-aws'
 
 #ログイン認証
 gem 'devise'
+#ログイン認証の日本語表示 公式：https://github.com/tigrish/devise-i18n　記事：https://karlley.hatenablog.jp/entry/2022/09/23/060408
+gem 'devise-i18n'
 
 #環境変数の設定（openするべきではないものを入れるところ https://pikawaka.com/rails/dotenv-rails）
 gem 'dotenv-rails'
@@ -91,3 +95,5 @@ gem 'kaminari'
 gem "dockerfile-rails", ">= 1.2", :group => :development
 
 gem "redis", "~> 5.0"
+#i18n　公式：https://github.com/svenfuchs/rails-i18n　
+gem 'rails-i18n', '~> 7.0.0'
