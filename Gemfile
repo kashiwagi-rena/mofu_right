@@ -92,3 +92,7 @@ gem 'kaminari'
 
 #i18n　公式：https://github.com/svenfuchs/rails-i18n　
 gem 'rails-i18n', '~> 7.0.0'
+
+#Serviceworkerってなんぞやというと「クライアント側でユーザーが見ている画面とは
+#別にバックグラウンドで動かせるスクリプト」
+gem 'serviceworker-rails'
