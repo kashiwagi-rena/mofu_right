@@ -72,6 +72,8 @@ gem 'jsbundling-rails'
 
 #画像アップロード用gem
 gem 'carrierwave', '>= 3.0.0.beta', '< 4.0'
+#ファイルの保存先を外部のストレージする際にサポートしてくれるgem
+gem 'fog-aws'
 
 #ログイン認証
 gem 'devise'
@@ -90,5 +92,8 @@ gem 'aws-sdk-s3'
 #ページネーション 公式：https://github.com/kaminari/kaminari　ピカワカ：https://pikawaka.com/rails/kaminari
 gem 'kaminari'
 
+gem "dockerfile-rails", ">= 1.2", :group => :development
+
+gem "redis", "~> 5.0"
 #i18n　公式：https://github.com/svenfuchs/rails-i18n　
 gem 'rails-i18n', '~> 7.0.0'

@@ -19,5 +19,6 @@
   },
   "devDependencies": {
     "tailwindcss": "^3.2.7"
-  }
+  },
+  "packageManager": "yarn@1.22.19"
 }
