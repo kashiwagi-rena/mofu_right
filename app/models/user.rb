@@ -23,7 +23,7 @@ class User < ApplicationRecord
 
   def own?(object)
     id == object.user_id
- end
+  end
 
   def great(post)
     great_posts <<(post)

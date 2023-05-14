@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "top#first_view"
 
-  resources :posts, only: %i[index new create] do
+  resources :posts, only: %i[index new create show] do
     resources :comments, only: %i[create], shallow: true
     collection do
       get :greats

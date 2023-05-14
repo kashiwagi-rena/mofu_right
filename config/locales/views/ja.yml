@@ -3,6 +3,7 @@ ja:
     login: 'ログイン'
     register: '登録'
     logout: 'ログアウト'
+    post: '投稿'
   users:
     new:
       title: 'ユーザー登録'
@@ -18,6 +19,8 @@ ja:
       name: 'なまえ'
       body: 'ひと言'
       post_image: 'もふもふ'
+    show:
+     title: '掲示板詳細'
   shared:
     header:
       my_page: 'マイページ'
