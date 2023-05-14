@@ -66,7 +66,7 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
-    addressable (2.8.1)
+    addressable (2.8.4)
       public_suffix (>= 2.0.2, < 6.0)
     aws-eventstream (1.2.0)
     aws-partitions (1.743.0)
@@ -116,10 +116,10 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    dockerfile-rails (1.2.5)
-      rails
     devise-i18n (1.11.0)
       devise (>= 4.9.0)
+    dockerfile-rails (1.2.5)
+      rails
     dotenv (2.8.1)
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
@@ -337,8 +337,8 @@ DEPENDENCIES
   cssbundling-rails
   debug
   devise
-  dockerfile-rails (>= 1.2)
   devise-i18n
+  dockerfile-rails (>= 1.2)
   dotenv-rails
   fog-aws
   jbuilder
@@ -349,8 +349,8 @@ DEPENDENCIES
   pry-byebug
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.2)
-  redis (~> 5.0)
   rails-i18n (~> 7.0.0)
+  redis (~> 5.0)
   sprockets-rails
   stimulus-rails
   turbo-rails
