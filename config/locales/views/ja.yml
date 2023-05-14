@@ -18,12 +18,12 @@ ja:
       password_forget: 'パスワードをお忘れの方はこちら'
   posts:
     new:
-      title: '投稿'
+      title: 'とうこう'
       name: 'なまえ'
       body: 'ひと言'
       post_image: 'もふもふ'
     show:
-     title: '掲示板詳細'
+     title: 'しょうさい'
   shared:
     header:
       my_page: 'マイページ'
