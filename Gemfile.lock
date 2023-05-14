@@ -116,13 +116,10 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-<<<<<<< HEAD
     dockerfile-rails (1.2.5)
       rails
-=======
     devise-i18n (1.11.0)
       devise (>= 4.9.0)
->>>>>>> a47346a895d73ed78144c8b461fd7777807da5cc
     dotenv (2.8.1)
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)

@@ -3,6 +3,10 @@ ja:
     login: 'ログイン'
     register: '登録'
     logout: 'ログアウト'
+    post: '投稿'
+    message:
+      created: 'コメント🐾作成'
+      not_created: '🐾しっぱい🐾'
   users:
     new:
       title: 'ユーザー登録'
@@ -14,10 +18,12 @@ ja:
       password_forget: 'パスワードをお忘れの方はこちら'
   posts:
     new:
-      title: '投稿'
+      title: 'とうこう'
       name: 'なまえ'
       body: 'ひと言'
       post_image: 'もふもふ'
+    show:
+     title: 'しょうさい'
   shared:
     header:
       my_page: 'マイページ'
