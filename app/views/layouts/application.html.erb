@@ -27,6 +27,8 @@
 
     <%= stylesheet_link_tag "application.tailwind", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <!-- OGPの記入 -->
+    <%= display_meta_tags(default_meta_tags) %>
   </head>
 
   <body>
