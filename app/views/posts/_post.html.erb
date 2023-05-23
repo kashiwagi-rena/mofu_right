@@ -28,16 +28,13 @@
                   <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                     <font style="vertical-align: inherit;">
                       <div class="list-inline-item">
+                        <!-- Twitterシェア -->
+                        <%= link_to "https://twitter.com/share?url=#{ request.url }&text=みてみて🐾%0a%0a「#{ post.name }」は正義🐾%0a%0a&hashtags=もふは正義,もふもふ", target: '_blank', class: 'fa-brands fa-twitter fa-2xl', style: 'color: #909398;' do %>
+                        <% end %>
                         <% if current_user && current_user.own?(post) %>
                           <%= render 'crud_menus', post: post %>
                         <% elsif current_user %>
-                          <%#= great（星） %>
-                          <div class='text-yellow-400 fa-xl'>
-                            <%= render 'great_button', post: post %>
-                            <div class='mt-1 text-xl'>
-                              <%= post.greats.count %>
-                            </div>
-                          </div>
+                          <%= render 'iine_buttons', post: post %>
                         <% end %>
                       </div>
                     </font>

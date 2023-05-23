@@ -23,7 +23,7 @@ class PostsController < ApplicationController
           image: {
             s3_object: {
               bucket: ENV['AWS_S3_BUCKET_NAME'],
-              name: image.filename
+              name: image.path
             }
           }
         )

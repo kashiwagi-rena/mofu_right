@@ -5,7 +5,7 @@ require 'carrierwave/storage/fog'
 CarrierWave.configure do |config|
     config.storage :fog
     config.fog_provider = 'fog/aws'
-    config.fog_directory  = 'mofumofu' # 作成したバケット名を記述
+    config.fog_directory  = ENV['AWS_S3_BUCKET_NAME'] # 作成したバケット名を記述
     config.fog_public = true
     config.fog_credentials = {
       provider: 'AWS',
