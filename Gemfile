@@ -97,3 +97,6 @@ gem "dockerfile-rails", ">= 1.2", :group => :development
 gem "redis", "~> 5.0"
 #i18n　公式：https://github.com/svenfuchs/rails-i18n　
 gem 'rails-i18n', '~> 7.0.0'
+
+#OGP 参考記事：https://zenn.dev/yoshiki105/articles/eb093bf603e728
+gem "meta-tags"
