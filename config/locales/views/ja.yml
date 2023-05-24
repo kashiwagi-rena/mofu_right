@@ -7,6 +7,8 @@ ja:
     message:
       created: 'コメント🐾作成'
       not_created: '🐾しっぱい🐾'
+      deleted: "%{item}を削除しました"
+      delete_confirm: '削除しますか？'
   users:
     new:
       title: 'ユーザー登録'
