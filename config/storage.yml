@@ -7,12 +7,12 @@ local:
   root: <%= Rails.root.join("storage") %>
 
 #ここで繋げている　URL：https://railsguides.jp/active_storage_overview.html#amazon-s3%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%EF%BC%88%E3%81%8A%E3%82%88%E3%81%B3s3%E4%BA%92%E6%8F%9Bapi%EF%BC%89
-#amazon:
-  #service: S3
-  #access_key_id: ENV['AWS_ACCESS_KEY_ID']
-  #secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
-  #region: "ap-northeast-1"
-  #bucket: "mofumofu"
+amazon:
+  service: S3
+  access_key_id: ENV['AWS_ACCESS_KEY_ID']
+  secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
+  region: "ap-northeast-1"
+  bucket: ENV['AWS_S3_BUCKET_NAME']
 
 # Use bin/rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 # amazon:

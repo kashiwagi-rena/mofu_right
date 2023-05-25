@@ -1,0 +1,13 @@
+<div class="font-yomogi container flex items-center justify-center text-center">
+  <div class="row">
+    <div class="w-full max-w-lg">
+      <% content_for(:name, @post.name) %>
+        <article class="card">
+          <div class="px-6 py-4">
+            <h1 class="text-3xl mt-3"><%= t('.title') %></h1>
+            <%= render 'form', { post: @post } %>
+          </dev>
+        </article>
+      </dev>
+  </dev>
+</dev>

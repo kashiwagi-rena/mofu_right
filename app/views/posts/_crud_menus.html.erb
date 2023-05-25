@@ -1,4 +1,8 @@
-<div class='mr10 float-right'>
-  <a href="#"><i class="fa-regular fa-trash-can fa-2xl" style="color: #909398;"></i></i></i></a>
-  <a href="#"><i class="fa-regular fa-pen-to-square fa-2xl" style="color: #909398;"></i></a>
+<div class="float-right flex flex-row">
+  <%= button_to post_path(post), id: "button-delete-#{post.id}", method: :delete, data: { confirm: t('defaults.message.delete_confirm') } do %>
+    <i class="fa-regular fa-trash-can fa-2xl text-gray-500"></i>
+  <% end %>
+  <%= button_to edit_post_path(post.id), id: "button-edit-#{post.id}", method: :get do %>
+    <i class="fa-regular fa-pen-to-square fa-2xl text-gray-500 ml-4"></i>
+  <% end %>
 </div>
