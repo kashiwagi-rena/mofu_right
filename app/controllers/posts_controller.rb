@@ -62,6 +62,21 @@ class PostsController < ApplicationController
     @great_posts = current_user.great_posts.includes(:user).order(created_at: :desc)
   end 
 
+  def edit
+    @post = current_user.posts.find(params[:id])
+  end
+
+  def update
+    @post = current_user.posts.find(params[:id])
+    if @post.update(post_params)
+      flash[:success] = t('defaults.message.updated', item: @post.name)
+      redirect_to @post
+    else
+      flash.now[:danger] = t('defaults.message.not_updated', item: @post.name)
+      render :edit
+    end
+  end
+
   def destroy
     @post = current_user.posts.find(params[:id])
     @post.destroy!

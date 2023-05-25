@@ -31,6 +31,7 @@
                         <!-- Twitterシェア -->
                         <%= link_to "https://twitter.com/share?url=#{ request.url }&text=みてみて🐾%0a%0a「#{ post.name }」は正義🐾%0a%0a&hashtags=もふは正義,もふもふ", target: '_blank', class: 'fa-brands fa-twitter fa-2xl mr-3', style: 'color: #909398;' do %>
                         <% end %>
+                        <!-- 削除・編集button -->
                         <% if current_user && current_user.own?(post) %>
                           <%= render 'crud_menus', post: post %>
                         <% elsif current_user %>
