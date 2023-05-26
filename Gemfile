@@ -100,3 +100,6 @@ gem 'rails-i18n', '~> 7.0.0'
 
 #OGP 参考記事：https://zenn.dev/yoshiki105/articles/eb093bf603e728
 gem "meta-tags"
+
+#にくきゅう文字：https://rubygems.org/gems/pad_character
+gem "pad_character"
