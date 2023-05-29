@@ -29,7 +29,7 @@ class PostsController < ApplicationController
           max_labels: 5
         )
         
-        binding.pry
+        #binding.pry
 
         # Rekognitionの結果に基づいて、投稿の可否を判断する
         #binding.pry
