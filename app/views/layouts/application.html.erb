@@ -7,12 +7,12 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%# cdnしか勝たん！下２行　%>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.3/dist/full.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
+      <%# <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.3/dist/full.css" rel="stylesheet" type="text/css" /> %>
+      <%# <script src="https://cdn.tailwindcss.com"></script> %>
     <%# google フォント %>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
+      <%# <link rel="preconnect" href="https://fonts.googleapis.com"> %>
+      <%#<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> %>
+      <%#<link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet"> %>
     <%#--------- ↓Kit Code を追記(xxx...部分は各自のKit名) ----------%>
     <script src="https://kit.fontawesome.com/95ae21fd7d.js" crossorigin="anonymous"></script>
     <!-- Google tag (gtag.js) -->
@@ -24,11 +24,12 @@
 
         gtag('config', 'G-Q8DESRW962');
       </script>
-
-    <%= stylesheet_link_tag "application.tailwind", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
     <!-- OGPの記入 -->
     <%= display_meta_tags(default_meta_tags) %>
+
+    <!-- Tailwindの記述 -->
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
 
   <body>

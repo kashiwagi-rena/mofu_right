@@ -103,3 +103,6 @@ gem "meta-tags"
 
 #にくきゅう文字：https://rubygems.org/gems/pad_character
 gem "pad_character"
+
+#Tailwindcss 公式：https://techracho.bpsinc.jp/hachi8833/2022_10_27/122530
+gem "tailwindcss-rails"
