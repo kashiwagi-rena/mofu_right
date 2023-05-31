@@ -7,6 +7,8 @@ ja:
     message:
       created: 'コメント🐾作成'
       not_created: '🐾しっぱい🐾'
+      updated: "%{item}を更新しました"
+      not_updated: "%{item}を更新できませんでした"
       deleted: "%{item}を削除しました"
       delete_confirm: '削除しますか？'
   users:
@@ -26,6 +28,8 @@ ja:
       post_image: 'もふもふ'
     show:
      title: 'しょうさい'
+    edit:
+      title: 'へんしゅう'
   shared:
     header:
       my_page: 'マイページ'

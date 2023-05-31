@@ -25,16 +25,19 @@ class PostsController < ApplicationController
               bucket: ENV['AWS_S3_BUCKET_NAME'],
               name: image.path
             }
-          }
+          },
+          max_labels: 5
         )
-  
+        
+        #binding.pry
+
         # Rekognitionの結果に基づいて、投稿の可否を判断する
         #binding.pry
         if response.labels.any? { |label| label.name.downcase.include?('person') }
+          flash[:alert] = '投稿が失敗しました。人間が写っています。'
           @post.destroy
           render :new
-          flash[:alert] = '投稿が失敗しました。人間が写っています。'
-        elsif response.labels.any? { |label| label.name.downcase.include?('animal') }
+        elsif ['animal', 'cat', 'dog', 'pet'].any? { |word| response.labels.any? { |label| label.name.downcase.include?(word) } }
           redirect_to posts_path
           flash[:alert] = 'もふもふの投稿が成功しました！'
         else
@@ -43,12 +46,12 @@ class PostsController < ApplicationController
           flash[:alert] = 'ﾓﾌｼﾞｬﾅｲ・・・'
         end
       else
-        render :new
         flash[:alert] = '投稿が失敗しました。画像を選択してください。'
+        render :new
       end
     else
       render :new
-      flash[:alert] = '投稿が失敗しました。タイトルと本文は必須です。'
+      flash[:alert] = '投稿が失敗しました。タイトルと本文、写真は必須です。'
     end
   end
   
@@ -61,6 +64,21 @@ class PostsController < ApplicationController
   def greats
     @great_posts = current_user.great_posts.includes(:user).order(created_at: :desc)
   end 
+
+  def edit
+    @post = current_user.posts.find(params[:id])
+  end
+
+  def update
+    @post = current_user.posts.find(params[:id])
+    if @post.update(post_params)
+      flash[:success] = t('defaults.message.updated', item: @post.name)
+      redirect_to @post
+    else
+      flash.now[:danger] = t('defaults.message.not_updated', item: @post.name)
+      render :edit
+    end
+  end
 
   def destroy
     @post = current_user.posts.find(params[:id])
