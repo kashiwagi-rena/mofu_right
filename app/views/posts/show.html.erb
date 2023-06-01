@@ -29,7 +29,7 @@
           <!-- Twitterシェア -->
           <% set_meta_tags  og: { image: image_url(@post.post_image.url) }, twitter: { image: image_url(@post.post_image.url) } %>
           <%# binding.pry %>
-          <%= link_to "https://twitter.com/share?url=#{ request.url }&text=みてみて🐾%0a%0a「#{ @post.name }」は正義🐾%0a%0a&hashtags=もふは正義,もふもふ", target: '_blank', class: 'fa-brands fa-twitter fa-2xl relative', style: 'color: #909398;' do %>
+          <%= link_to "https://twitter.com/share?url=#{ request.url }&text=みてみて🐾%0a%0a「#{ @post.name }」は正義🐾%0a%0a&hashtags=もふは正義,もふもふ", target: '_blank', class: 'fa-brands fa-twitter fa-2xl relative mt-3', style: 'color: #909398;' do %>
           <% end %>
         </div>
           <!-- にくきゅう左　-->
@@ -42,9 +42,9 @@
         <% if current_user && current_user.own?(@post) %>
           <!-- コメントフォーム -->
             <%= render 'comments/form', { post: @post, comment: @comment } %>
+        <% end %>
           <!-- コメントエリア -->
             <%= render 'comments/comments', { comments: @comments } %>
-        <% end %>
       </article>
     </div>
   </div>

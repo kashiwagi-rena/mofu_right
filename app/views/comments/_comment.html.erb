@@ -7,7 +7,7 @@
         <%= simple_format(comment.body.to_pad) %>
       </div>
     </div>
-    <% if current_user.own?(comment) %>
+    <% if current_user && current_user.own?(@post) %>
       <%= render 'crud_menus', post: @post %>
     <% end %>
   </td>
