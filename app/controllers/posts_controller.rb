@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :destroy, :show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :destroy, :edit, :update, :destroy]
   #AWS Rekognition
   require 'aws-sdk-rekognition'
 

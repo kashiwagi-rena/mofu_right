@@ -21,16 +21,13 @@
               <!-- 投稿者以外に見せない -->
               <h6 class="text-lg"><%= simple_format(@post.body) %></h6>
               <!-- 削除・編集button -->
-              <%= render 'crud_menus', post: @post  if current_user.own?(@post) %>
+              <% if current_user && current_user.own?(@post) %>
+                <%= render 'crud_menus', post: @post %>
+              <% end %>
             </div>
           </div>
           <!-- Twitterシェア -->
-          <% set_meta_tags  twitter: {
-              card: 'summary_large_image', # Twitterで表示する場合は大きいカードにする
-              site: '@mofu_is_justice', # アプリの公式Twitterアカウントがあれば、アカウント名を書く
-              image: image_url(@post.post_image.url) # 配置するパスやファイル名によって変更すること
-            }
-          %>
+          <% set_meta_tags  og: { image: image_url(@post.post_image.url) }, twitter: { image: image_url(@post.post_image.url) } %>
           <%# binding.pry %>
           <%= link_to "https://twitter.com/share?url=#{ request.url }&text=みてみて🐾%0a%0a「#{ @post.name }」は正義🐾%0a%0a&hashtags=もふは正義,もふもふ", target: '_blank', class: 'fa-brands fa-twitter fa-2xl relative', style: 'color: #909398;' do %>
           <% end %>
@@ -42,10 +39,12 @@
             <div class="absolute left-10 mt-20">
               <%= image_tag 'nikukyu.jpg', size: "50x50" %>
             </div>
-        <!-- コメントフォーム -->
-          <%= render 'comments/form', { post: @post, comment: @comment } %>
-        <!-- コメントエリア -->
-          <%= render 'comments/comments', { comments: @comments } %>
+        <% if current_user && current_user.own?(@post) %>
+          <!-- コメントフォーム -->
+            <%= render 'comments/form', { post: @post, comment: @comment } %>
+          <!-- コメントエリア -->
+            <%= render 'comments/comments', { comments: @comments } %>
+        <% end %>
       </article>
     </div>
   </div>
