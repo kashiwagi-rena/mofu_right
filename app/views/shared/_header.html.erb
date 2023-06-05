@@ -8,11 +8,11 @@
       <%# ログインしてるかどうかのif文 %>
       <% if user_signed_in? %>
         <%= button_to destroy_user_session_path , method: :delete, alert: "本当にログアウトしますか？", class: "hover:text-yellow-700" do %>
-          <i class="fa-brands fa-google">ログアウト</i>    
+          ログアウト
         <% end %>
       <% else %>
         <%= link_to new_user_session_path , class: "hover:text-yellow-700" do %>
-          <i class="fa-brands fa-google">ログイン</i>    
+          ログイン
         <% end %>
       <% end %>
     </div>
