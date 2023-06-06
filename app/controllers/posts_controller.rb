@@ -34,11 +34,12 @@ class PostsController < ApplicationController
         # Rekognitionの結果に基づいて、投稿の可否を判断する
         #binding.pry
         if response.labels.any? { |label| label.name.downcase.include?('person') }
-          flash[:alert] = '投稿が失敗しました。人間が写っています。'
           @post.destroy
           render :new
+          flash[:alert] = '投稿が失敗しました。人間が写っています。'
         elsif ['animal', 'cat', 'dog', 'pet'].any? { |word| response.labels.any? { |label| label.name.downcase.include?(word) } }
-          redirect_to posts_path
+          binding.pry
+          redirect_to post_path(@post)
           flash[:alert] = 'もふもふの投稿が成功しました！'
         else
           @post.destroy
