@@ -9,7 +9,7 @@
         <% else %>
           <p><%= t('.no_result') %><%= image_tag 'nikukyu.jpg', size: "50x50" %></p>
         <% end %>
-        <dev class="flex items-center justify-center text-center">
+        <dev class="font-yomogi flex items-center justify-center text-center my-6 text-xl text-pink-600">
           <%= paginate @posts %>
         </dev>
       </div>
