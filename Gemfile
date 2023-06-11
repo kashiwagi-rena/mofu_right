@@ -106,3 +106,6 @@ gem "pad_character"
 
 #Tailwindcss 公式：https://techracho.bpsinc.jp/hachi8833/2022_10_27/122530
 gem "tailwindcss-rails"
+
+#かわいいerrorにするgem 公式：https://github.com/yuki24/rambulance
+gem "rambulance"

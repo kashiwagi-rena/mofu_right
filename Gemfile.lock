@@ -279,6 +279,10 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
+    rambulance (2.3.0)
+      actionpack
+      activesupport
+      railties
     redis (5.0.6)
       redis-client (>= 0.9.0)
     redis-client (0.14.1)
@@ -356,6 +360,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.2)
   rails-i18n (~> 7.0.0)
+  rambulance
   redis (~> 5.0)
   sprockets-rails
   stimulus-rails
