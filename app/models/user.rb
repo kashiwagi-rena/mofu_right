@@ -26,7 +26,7 @@ class User < ApplicationRecord
   end
 
   def great(post)
-    great_posts <<(post)
+    great_posts << post
   end
 
   def ungreat(post)

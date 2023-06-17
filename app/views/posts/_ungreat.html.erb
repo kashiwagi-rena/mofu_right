@@ -1,5 +1,10 @@
-<%= button_to great_path(current_user.greats.find_by(post_id: post.id)), id: "js-great-button-for-post-#{post.id}", method: :delete do %>
-  <%# ☆ %>
-  <i class="fa-solid fa-star"></i>
-<% end %>
-
+<turbo-frame id="great-button-<%= post.id %>">
+  <%= button_to great_path(current_user.greats.find_by(post_id: post.id)), 
+                id: "js-great-button-for-post-#{post.id}", 
+                method: :delete,
+                remote: true,
+                data: { type: :script } do %>
+    <%# ☆ %>
+    <i class="fa-solid fa-star"></i>
+  <% end %>
+</turbo-frame>

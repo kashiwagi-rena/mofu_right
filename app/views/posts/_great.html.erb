@@ -1,4 +1,10 @@
-<%= button_to greats_path(post_id: post.id), id: "js-great-button-for-post-#{post.id}",  method: :post do %>
-  <%# ★ %>
-  <i class="fa-regular fa-star"></i>
-<% end %>
+<turbo-frame id="great-button-<%= post.id %>">
+  <%= button_to greats_path(post_id: post.id),
+                id: "js-great-button-for-post-#{post.id}", 
+                method: :post,
+                remote: true,
+                data: { type: :script } do %>
+    <%# ★ %>
+    <i class="fa-regular fa-star"></i>
+  <% end %>
+</turbo-frame>

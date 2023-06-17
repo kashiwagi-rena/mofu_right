@@ -1,26 +1,17 @@
 class GreatsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
-    current_user.greats.create!(post_id: @post.id)
+    current_user.great(@post)
     #redirect_back fallback_location: root_path, warning: 'いいねしました'
 
-    render turbo_stream: turbo_stream.replace(
-      'great-button',
-      partial: 'posts/great_button',
-      locals: { product: @product, liked: true },
-    )
+    render turbo_stream: turbo_stream.replace("greats-button-#{@post.id}", partial: 'posts/great', locals: { post: @post })
   end
 
   def destroy
-    @post = Post.find(params[:post_id])
-    greats = current_user.greats.find_by!(post_id: @post.id)
-    greats.destroy!
+    @post = current_user.greats.find(params[:id]).post
+    current_user.ungreat(@post)
     #redirect_back fallback_location: root_path, warning: 'いいねを解除しました'
-    
-    render turbo_stream: turbo_stream.replace(
-      'great-button',
-      partial: 'posts/great_button',
-      locals: { product: @product, liked: false },
-    )
+
+    render turbo_stream: turbo_stream.replace("greats-button-#{@post.id}", partial: 'posts/ungreat', locals: { post: @post })
   end
 end
