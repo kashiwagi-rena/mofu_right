@@ -654,14 +654,14 @@
     FrameLoadingStyle2["eager"] = "eager";
     FrameLoadingStyle2["lazy"] = "lazy";
   })(FrameLoadingStyle || (FrameLoadingStyle = {}));
-  var FrameElement = class extends HTMLElement {
+  var FrameElement = class _FrameElement extends HTMLElement {
     static get observedAttributes() {
       return ["disabled", "complete", "loading", "src"];
     }
     constructor() {
       super();
       this.loaded = Promise.resolve();
-      this.delegate = new FrameElement.delegateConstructor(this);
+      this.delegate = new _FrameElement.delegateConstructor(this);
     }
     connectedCallback() {
       this.delegate.connect();
@@ -1194,7 +1194,7 @@
         return FormEnctype.urlEncoded;
     }
   }
-  var FormSubmission = class {
+  var FormSubmission = class _FormSubmission {
     static confirmMethod(message, _element, _submitter) {
       return Promise.resolve(confirm(message));
     }
@@ -1248,7 +1248,7 @@
       const { initialized, requesting } = FormSubmissionState;
       const confirmationMessage = getAttribute("data-turbo-confirm", this.submitter, this.formElement);
       if (typeof confirmationMessage === "string") {
-        const answer = await FormSubmission.confirmMethod(confirmationMessage, this.formElement, this.submitter);
+        const answer = await _FormSubmission.confirmMethod(confirmationMessage, this.formElement, this.submitter);
         if (!answer) {
           return;
         }
@@ -1914,7 +1914,7 @@
       return defaultValue;
     }
   }
-  var ProgressBar = class {
+  var ProgressBar = class _ProgressBar {
     static get defaultCSS() {
       return unindent`
       .turbo-progress-bar {
@@ -1926,8 +1926,8 @@
         background: #0076ff;
         z-index: 2147483647;
         transition:
-          width ${ProgressBar.animationDuration}ms ease-out,
-          opacity ${ProgressBar.animationDuration / 2}ms ${ProgressBar.animationDuration / 2}ms ease-in;
+          width ${_ProgressBar.animationDuration}ms ease-out,
+          opacity ${_ProgressBar.animationDuration / 2}ms ${_ProgressBar.animationDuration / 2}ms ease-in;
         transform: translate3d(0, 0, 0);
       }
     `;
@@ -1977,7 +1977,7 @@
     }
     fadeProgressElement(callback) {
       this.progressElement.style.opacity = "0";
-      setTimeout(callback, ProgressBar.animationDuration * 1.5);
+      setTimeout(callback, _ProgressBar.animationDuration * 1.5);
     }
     uninstallProgressElement() {
       if (this.progressElement.parentNode) {
@@ -1986,7 +1986,7 @@
     }
     startTrickling() {
       if (!this.trickleInterval) {
-        this.trickleInterval = window.setInterval(this.trickle, ProgressBar.animationDuration);
+        this.trickleInterval = window.setInterval(this.trickle, _ProgressBar.animationDuration);
       }
     }
     stopTrickling() {
@@ -2001,7 +2001,7 @@
     createStylesheetElement() {
       const element = document.createElement("style");
       element.type = "text/css";
-      element.textContent = ProgressBar.defaultCSS;
+      element.textContent = _ProgressBar.defaultCSS;
       if (this.cspNonce) {
         element.nonce = this.cspNonce;
       }
@@ -2097,7 +2097,7 @@
     }
     return element;
   }
-  var PageSnapshot = class extends Snapshot {
+  var PageSnapshot = class _PageSnapshot extends Snapshot {
     static fromHTMLString(html = "") {
       return this.fromDocument(parseHTMLDocument(html));
     }
@@ -2125,7 +2125,7 @@
       for (const clonedPasswordInput of clonedElement.querySelectorAll('input[type="password"]')) {
         clonedPasswordInput.value = "";
       }
-      return new PageSnapshot(clonedElement, this.headSnapshot);
+      return new _PageSnapshot(clonedElement, this.headSnapshot);
     }
     get headElement() {
       return this.headSnapshot.element;
@@ -4209,7 +4209,7 @@
       }
     }
   }
-  var StreamElement = class extends HTMLElement {
+  var StreamElement = class _StreamElement extends HTMLElement {
     static async renderElement(newElement) {
       await newElement.performAction();
     }
@@ -4299,7 +4299,7 @@
       return new CustomEvent("turbo:before-stream-render", {
         bubbles: true,
         cancelable: true,
-        detail: { newStream: this, render: StreamElement.renderElement }
+        detail: { newStream: this, render: _StreamElement.renderElement }
       });
     }
     get targetElementsById() {
@@ -6165,7 +6165,7 @@
       return element.matches(selector) && controllerAttribute.split(" ").includes(outletName);
     }
   };
-  var Scope = class {
+  var Scope = class _Scope {
     constructor(schema, element, identifier, logger) {
       this.targets = new TargetSet(this);
       this.classes = new ClassMap(this);
@@ -6198,7 +6198,7 @@
       return this.element === document.documentElement;
     }
     get documentScope() {
-      return this.isDocumentScope ? this : new Scope(this.schema, document.documentElement, this.identifier, this.guide.logger);
+      return this.isDocumentScope ? this : new _Scope(this.schema, document.documentElement, this.identifier, this.guide.logger);
     }
   };
   var ScopeObserver = class {
@@ -6802,5 +6802,14 @@
 
   // app/javascript/controllers/index.js
   application.register("hello", hello_controller_default);
+
+  // app/javascript/hoge.js
+  console.log("Hoge");
+  window.onload = function() {
+    console.log("\u30DA\u30FC\u30B8\u8AAD\u307F\u8FBC\u307F\u5B8C\u4E86");
+  };
+  document.addEventListener("turbo:load", () => {
+    console.log("turbo\u8AAD\u307F\u53D6\u308A\u5B8C\u4E86\u5F8C");
+  });
 })();
 //# sourceMappingURL=assets/application.js.map
