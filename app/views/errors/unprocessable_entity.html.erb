@@ -1,0 +1,24 @@
+<style>
+  p {
+    color: #000;
+    text-shadow:1px 1px 0 #FFF, -1px -1px 0 #FFF,
+              -1px 1px 0 #FFF, 1px -1px 0 #FFF,
+              0px 1px 0 #FFF,  0-1px 0 #FFF,
+              -1px 0 0 #FFF, 1px 0 0 #FFF;
+  }
+</style>
+
+<div class="font-yomogi mx-5 my-5">
+  <div class="top">
+    <div class="md:hero md:min-h-[1000px] md:relative bg-cover bg-center min-h-[300px] relative" style="background-image: url(<%= asset_path "space_cat.png" %>);"> 
+      <!-- This file lives in app/views/errors/unprocessable_entity.html.erb -->
+      <div class="absolute bottom-0 right-0">
+        <div class="text-red-900 text-xs md:text-base">
+          <p>The change you wanted was rejected.</p>
+          <p>Maybe you tried to change something you didn't have access to.</p>
+          <p>If you are the application owner check the logs for more information.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
