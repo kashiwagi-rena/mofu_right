@@ -1,5 +1,10 @@
-<% if current_user.great?(post) %>
-  <%= render 'ungreat', { post: post } %>
-<% else %>
-  <%= render 'great', { post: post } %>
-<% end %>
+<turbo-frame id="great-button-<%= post.id %>">
+  <% if current_user.great?(post) %>
+    <%= render 'ungreat', { post: post } %>
+  <% else %>
+    <%= render 'great', { post: post } %>
+  <% end %>
+  <div class='mt-1 text-xl'>
+        <%= post.greats.count %>
+  </div>
+</turbo-frame>
