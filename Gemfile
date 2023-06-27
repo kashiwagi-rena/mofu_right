@@ -85,6 +85,8 @@ gem 'dotenv-rails'
 
 #google_loginようにgem　公式：https://github.com/zquestz/omniauth-google-oauth2 参考：https://qiita.com/akioneway94/items/35641ad30c2acb23b562　
 gem 'omniauth-google-oauth2'
+#上記のgemの問題点改善 公式：https://rubygems.org/gems/omniauth-rails_csrf_protection/versions/0.1.0?locale=ja　参考：https://qiita.com/NT90957869/items/2a3ce18dedf93ccf2bdc
+gem "omniauth-rails_csrf_protection"
 
 #aws
 gem 'aws-sdk-rekognition'
