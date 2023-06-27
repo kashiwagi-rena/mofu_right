@@ -1,5 +1,5 @@
-<dev class="relative">
-  <dev class="container mx-auto">
+<dev class="flex justify-center items-center">
+  <dev class="container mx-auto font-yomogi">
 
     <dev>
       <%- if controller_name != 'sessions' %>
@@ -27,11 +27,12 @@
       <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />
     <% end %>
 
-    <%- if devise_mapping.omniauthable? %>
-      <%= link_to user_google_oauth2_omniauth_authorize_path, data: { turbo_method: :post } do %>
-        <i class="fa-brands fa-google"></i>
-        Googleアカウントでサインインする
+    <div class="flex justify-center">
+      <%- if devise_mapping.omniauthable? %>
+        <%= link_to user_google_oauth2_omniauth_authorize_path,  method: :post do %>
+          <%= image_tag("btn_google_signin_light_focus_web.png") %>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </dev>
 </dev>
