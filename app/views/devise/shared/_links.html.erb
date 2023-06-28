@@ -1,38 +1,41 @@
 <dev class="flex justify-center items-center">
   <dev class="container mx-auto font-yomogi">
 
-    <dev>
-      <%- if controller_name != 'sessions' %>
-        <%= link_to "Log in", new_session_path(resource_name) %><br />
-      <% end %>
-    </dev>
+    <dev class="relative">
+  <% if controller_name != 'sessions' %>
+    <%= form_tag(new_session_path(resource_name), method: :get) do %>
+      <%= submit_tag t(".sign_in"), class: "btn btn-outline btn-secondary mt-3 lg:mt-4" %>
+    <% end %>
+  <% end %>
+</dev>
 
-    <dev>
+    <dev  class="relative">
       <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-        <%= link_to "Sign up", new_registration_path(resource_name) %><br />
+        <%= link_to t(".sign_up"), new_registration_path(resource_name), class: "btn btn-outline btn-info mt-3 lg:mt-4" %>
       <% end %>
     </dev>
 
-    <dev>
+    <dev class="relative">
       <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-        <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+        <%= button_to t(".forgot_your_password"), new_password_path(resource_name), method: :get, class: "btn btn-outline btn-accent  mt-3 lg:mt-4" %>
       <% end %>
     </dev>
 
-    <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
-      <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
-    <% end %>
-
-    <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
-      <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />
-    <% end %>
-
-    <div class="flex justify-center">
-      <%- if devise_mapping.omniauthable? %>
-        <%= link_to user_google_oauth2_omniauth_authorize_path,  method: :post do %>
-          <%= image_tag("btn_google_signin_light_focus_web.png") %>
-        <% end %>
+      <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+        <%= link_to t('.didn_t_receive_confirmation_instructions'), new_confirmation_path(resource_name) %>
       <% end %>
-    </div>
+
+      <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+        <%= link_to t('.didn_t_receive_unlock_instructions'), new_unlock_path(resource_name) %>
+      <% end %>
+
+      <dev class="flex justify-center m-3 lg:m-5">
+        <%- if devise_mapping.omniauthable? %>
+          <%= link_to user_google_oauth2_omniauth_authorize_path,  method: :post do %>
+            <%= image_tag("btn_google_signin_light_focus_web.png") %>
+          <% end %>
+        <% end %>
+      </dev>
+    </dev>
   </dev>
 </dev>
