@@ -1,15 +1,15 @@
 <dev class="font-yomogi text-center text-red-900">
-  <h2 class="text-3xl  m-3 lg:m-5"><%= t('.sign_in') %></h2>
+  <h2 class="text-2xl lg:text-3xl m-3 lg:m-5"><%= t('.sign_in') %></h2>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
       <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'メアドを入力にゃん', class: "m-1 lg:m-5" %>
     </div>
 
     <div class="field">
       <%= f.label :password %><br />
-      <%= f.password_field :password, autocomplete: "current-password" %>
+      <%= f.password_field :password, autocomplete: "current-password", placeholder: '🐾🐾🐾🐾🐾🐾', class: "m-1 lg:m-5" %>
     </div>
 
     <% if devise_mapping.rememberable? %>
@@ -20,7 +20,7 @@
     <% end %>
 
     <div class="actions">
-      <%= button_to t(".sign_in"), new_session_path(resource_name), method: :get, class: "btn btn-outline btn-secondary m-3 lg:m-4" %>
+      <%= button_to t(".sign_in"), new_session_path(resource_name), method: :get, class: "btn btn-outline btn-secondary mt-3 lg:mt-4" %>
     </div>
   <% end %>
 

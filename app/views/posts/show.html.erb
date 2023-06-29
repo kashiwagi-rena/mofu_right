@@ -1,4 +1,4 @@
-<div class="font-yomogi container flex items-center justify-center text-center">
+<div class="font-yomogi text-red-900 container flex items-center justify-center text-center">
    <div class="row">
     <div class="col-lg-8 offset-lg-2">
       <h1 class="text-3xl mt-3"><%= t('.title') %></h1>
@@ -39,7 +39,7 @@
             <div class="absolute left-10 mt-20">
               <%= image_tag 'nikukyu.jpg', size: "50x50" %>
             </div>
-        <% if current_user && current_user.own?(@post) %>
+        <% if current_user %>
           <!-- コメントフォーム -->
             <%= render 'comments/form', { post: @post, comment: @comment } %>
         <% end %>
