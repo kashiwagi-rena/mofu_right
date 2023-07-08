@@ -111,3 +111,8 @@ gem "tailwindcss-rails"
 
 #かわいいerrorにするgem 公式：https://github.com/yuki24/rambulance
 gem "rambulance"
+
+#Model Specを書くgem 参照：https://hackmd.io/@0ybq7E7CT5GYxDP8A9clgA/HJ2ylBHd3#
+gem "rspec-rails"
+
+#bundle install
