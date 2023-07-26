@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   require 'aws-sdk-rekognition'
 
   def index
-    @posts = Post.all.includes([:user, :greats]).order(created_at: :desc).page(params[:page]).per(10)
+    @posts = Post.all.includes([:user, :greats]).order(created_at: :desc).page(params[:page]).per(12)
   end
 
   def new
