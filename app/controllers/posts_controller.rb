@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   require 'aws-sdk-rekognition'
 
   def index
-    @posts = Post.all.includes([:user, :greats]).order(created_at: :desc).page(params[:page]).per(10)
+    @posts = Post.all.includes([:user, :greats]).order(created_at: :desc).page(params[:page]).per(12)
   end
 
   def new
@@ -35,8 +35,8 @@ class PostsController < ApplicationController
         #binding.pry
         if response.labels.any? { |label| label.name.downcase.include?('person') }
           @post.destroy
-          render :new
           flash[:alert] = '投稿が失敗しました。人間が写っています。'
+          render :new
         elsif ['animal', 'cat', 'dog', 'pet'].any? { |word| response.labels.any? { |label| label.name.downcase.include?(word) } }
           redirect_to post_path(@post)
           flash[:alert] = 'もふもふの投稿が成功しました！'

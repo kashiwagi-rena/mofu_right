@@ -1,42 +1,28 @@
-<dev class="text-center relative">
-  <h2>Login</h2>
-      <!-- にくきゅう左　-->
-      <div class="absolute">
-        <%= image_tag 'nikukyu.jpg', size: "50x50" %>
-      </div>
-      <div class="absolute left-10 mt-5">
-        <%= image_tag 'nikukyu.jpg', size: "50x50" %>
-      </div>
+<dev class="font-yomogi text-center text-red-900">
+  <h2 class="text-2xl lg:text-3xl m-3 lg:m-5"><%= t('.sign_in') %></h2>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div ="field relative">
+    <div class="field">
       <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: '・・・@example.com' %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'メアドを入力にゃん', class: "m-1 lg:m-5" %>
     </div>
 
-    <div class="field relative">
+    <div class="field">
       <%= f.label :password %><br />
-      <%= f.password_field :password, autocomplete: "current-password", placeholder: '６文字以上' %>
+      <%= f.password_field :password, autocomplete: "current-password", placeholder: '🐾🐾🐾🐾🐾🐾', class: "m-1 lg:m-5" %>
     </div>
 
     <% if devise_mapping.rememberable? %>
-      <div class="field relative">
+      <div class="field">
         <%= f.check_box :remember_me %>
         <%= f.label :remember_me %>
       </div>
     <% end %>
 
-    <div class="actions relative">
-      <%= f.submit "Log in" %>
+    <div class="actions">
+      <%= button_to t(".sign_in"), new_session_path(resource_name), method: :get, class: "btn btn-outline btn-secondary mt-3 lg:mt-4" %>
     </div>
   <% end %>
-      <!-- にくきゅう右　-->
-      <div class="absolute right-20">
-        <%= image_tag 'nikukyu.jpg', size: "50x50" %>
-      </div>
-      <div class="absolute right-10 mt-5">
-        <%= image_tag 'nikukyu.jpg', size: "50x50" %>
-      </div>
 
   <%= render "devise/shared/links" %>
 </dev>

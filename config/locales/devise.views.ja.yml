@@ -25,7 +25,7 @@ ja:
         unconfirmed_email: 未確認Eメール
         unlock_token: ロック解除用トークン
         updated_at: 更新日
-        login: ログイン
+        login: もふもふの世界へログイン
         Sign_up: 新規登録
     models:
       user: ユーザー
@@ -37,7 +37,7 @@ ja:
       send_instructions: アカウントの有効化について数分以内にメールでご連絡します。
       send_paranoid_instructions: メールアドレスが登録済みの場合、本人確認用のメールが数分以内に送信されます。
     failure:
-      already_authenticated: すでにログインしています。
+      already_authenticated: すでにもふもふの世界へログインしています。
       inactive: アカウントが有効化されていません。メールに記載された手順にしたがって、アカウントを有効化してください。
       invalid: "%{authentication_keys}またはパスワードが違います。"
       last_attempt: もう一回誤るとアカウントがロックされます。
@@ -84,10 +84,10 @@ ja:
         confirm_new_password: 確認用新しいパスワード
         new_password: 新しいパスワード
       new:
-        forgot_your_password: パスワードを忘れましたか？
-        send_me_reset_password_instructions: パスワードの再設定方法を送信する
+        forgot_your_password: パスワードを忘れちゃったにゃ？
+        send_me_reset_password_instructions: 🐾パスワードの再設定方法を送信するにゃ🐾
       no_token: このページにはアクセスできません。パスワード再設定メールのリンクからアクセスされた場合には、URL をご確認ください。
-      send_instructions: パスワードの再設定について数分以内にメールでご連絡いたします。
+      send_instructions: しょうがないにゃ〜、パスワードの再設定について数分以内にメールでご連絡するにゃ。
       send_paranoid_instructions: メールアドレスが登録済みの場合、パスワード再設定用のメールが数分以内に送信されます。
       updated: パスワードが正しく変更されました。
       updated_not_active: パスワードが正しく変更されました。
@@ -103,29 +103,29 @@ ja:
         update: 更新
         we_need_your_current_password_to_confirm_your_changes: 変更を反映するには現在のパスワードを入力してください
       new:
-        sign_up: アカウント登録
+        sign_up: 🐾もふもふの住人になる！🐾
       signed_up: アカウント登録が完了しました。
-      signed_up_but_inactive: ログインするためには、アカウントを有効化してください。
+      signed_up_but_inactive: もふもふの世界へログインするためには、アカウントを有効化してください。
       signed_up_but_locked: アカウントがロックされているためログインできません。
       signed_up_but_unconfirmed: 本人確認用のメールを送信しました。メール内のリンクからアカウントを有効化させてください。
       update_needs_confirmation: アカウント情報を変更しました。変更されたメールアドレスの本人確認のため、本人確認用メールより確認処理をおこなってください。
       updated: アカウント情報を変更しました。
-      updated_but_not_signed_in: あなたのアカウントは正常に更新されましたが、パスワードが変更されたため、再度ログインしてください。
+      updated_but_not_signed_in: あなたのアカウントは正常に更新されましたが、パスワードが変更されたため、再度もふもふの世界へログインしてください。
     sessions:
-      already_signed_out: 既にログアウト済みです。
+      already_signed_out: 既にもふもふの世界からログアウト済みです。
       new:
-        sign_in: ログイン
-      signed_in: ログインしました。
-      signed_out: ログアウトしました。
+        sign_in: 🐾もふもふの世界へログイン！🐾
+      signed_in: もふもふの世界へログインしました。
+      signed_out: もふもふの世界からログアウトしました。
     shared:
       links:
         back: 戻る
         didn_t_receive_confirmation_instructions: アカウント確認のメールを受け取っていませんか？
         didn_t_receive_unlock_instructions: アカウントのロック解除方法のメールを受け取っていませんか？
-        forgot_your_password: パスワードを忘れましたか？
-        sign_in: ログイン
-        sign_in_with_provider: "%{provider}でログイン"
-        sign_up: アカウント登録
+        forgot_your_password: パスワードを忘れちゃったにゃ？
+        sign_in: 🐾もふもふの世界へログイン🐾
+        sign_in_with_provider: "%{provider}でもふもふの世界へログイン"
+        sign_up: 🐾もふもふの住人になる！🐾
       minimum_password_length: "（%{count}字以上）"
     unlocks:
       new:
@@ -135,7 +135,7 @@ ja:
       unlocked: アカウントをロック解除しました。
   errors:
     messages:
-      already_confirmed: は既に登録済みです。ログインしてください。
+      already_confirmed: は既に登録済みです。もふもふの世界へログインしてください。
       confirmation_period_expired: の期限が切れました。%{period} までに確認する必要があります。 新しくリクエストしてください。
       expired: の有効期限が切れました。新しくリクエストしてください。
       not_found: は見つかりませんでした。
